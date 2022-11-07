@@ -18,7 +18,7 @@ Level 1 | Basic | Example
 -------------------------------------------------------------------------------------------------------------------------------------------
 Level 2 | Essential | Example
 ------------------------------------------------|------------------------------------------------|-----------------------------------------
-[11] | Simple port scanner | :x:
+[11] | Simple port scanner | :heavy_check_mark:
 [12] | Port scanner with OS fingerprint using TTL (Time To Live) | :x:
 [13] | Port scanner with port footprint (HTTP? DNS? FTP? IRC?) | :x:
 [14] | Simple Web Directory brute-forcer (Threaded) | :x:
