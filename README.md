@@ -13,13 +13,13 @@ Level 1 | Basic | Example
 [7] | ROT13 Cipher | :heavy_check_mark:
 [8] | UDP Chat server -> The messages should be encoded with ROT13 Cipher | :x:
 [9] | Remote command execution | :heavy_check_mark:
-[10] | Recreate the Netcat tool | :x:
+[10] | Recreate the Netcat tool | :heavy_check_mark:
 
 -------------------------------------------------------------------------------------------------------------------------------------------
 Level 2 | Essential | Example
 ------------------------------------------------|------------------------------------------------|-----------------------------------------
 [11] | Simple port scanner | ✔️
-[12] | Port scanner with OS fingerprint using TTL (Time To Live) | :x:
+[12] | Port scanner with OS fingerprint using TTL (Time To Live) | :heavy_check_mark:
 [13] | Port scanner with port footprint (HTTP? DNS? FTP? IRC?) | :x:
 [14] | Simple Web Directory brute-forcer (Threaded) | :x:
 [15] | Recursive Web Directory brute-forcer (Threaded peer recursion) | :x:
