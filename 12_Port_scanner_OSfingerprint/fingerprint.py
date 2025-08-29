@@ -21,7 +21,7 @@ def scanport(ip, ports):
 
 def main():
     parser = argparse.ArgumentParser(description='Scan a host for open ports and services')
-    parser.add_argument('host', help='The target host IP address')
+    parser.add_argument('-H','--host', help='The target host IP address')
     parser.add_argument('-p','--ports', help='Ports to Scan', type=str, required=True)
     args= parser.parse_args()
 
