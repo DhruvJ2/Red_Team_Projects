@@ -11,7 +11,7 @@ Level 1 | Basic | Example
 [5] | Caesar Cipher tool | ✔️
 [6] | TCP chat server -> The messages should be encoded with Caesar Cipher | ✔️
 [7] | ROT13 Cipher | ✔️
-[8] | UDP Chat server -> The messages should be encoded with ROT13 Cipher | :x:
+[8] | UDP Chat server -> The messages should be encoded with ROT13 Cipher | :heavy_check_mark:
 [9] | Remote command execution | ✔️
 [10] | Recreate the Netcat tool | ✔️
 

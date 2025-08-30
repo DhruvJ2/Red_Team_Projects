@@ -13,9 +13,8 @@ def decrypt(text):
 
 text = input('Enter text:\n> ')
 ciphertext = encrypt(text)
-print("Your cipher text is:")
-print(ciphertext)
+print(f"Your cipher text is: {ciphertext}")
 
 plaintext = decrypt(ciphertext)
-print("Decrypted text is:")
-print(plaintext)
+print(f"Decrypted text is: {plaintext}")
+

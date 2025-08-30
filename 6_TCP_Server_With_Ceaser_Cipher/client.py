@@ -35,6 +35,7 @@ def decrypt(text, shift):
             result += char
     return result
 
+## Listening to server and sending nickname
 def receive():
     while True:
         try:
@@ -85,10 +86,13 @@ def receive():
 def write():
     while True:
         text = input('')
-        encrypted_text = encrypt(text, shift)
-        # send message with shift appended after nickname separated by |
-        message = '{}|{}: {}'.format(nickname, shift, encrypted_text)
-        client.send(message.encode('ascii'))
+        if text=='q':
+            exit()
+        else:
+            encrypted_text = encrypt(text, shift)
+            # send message with shift appended after nickname separated by |
+            message = '{}|{}: {}'.format(nickname, shift, encrypted_text)
+            client.send(message.encode('ascii'))
 
 
 # def write():
