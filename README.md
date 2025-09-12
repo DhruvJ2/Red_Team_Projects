@@ -25,7 +25,7 @@ Level 2 | Essential | Example
 [15] | Recursive Web Directory brute-forcer (Threaded peer recursion) | :heavy_check_mark:
 [16] | Web Login bruteforce tool | :heavy_check_mark:
 [17] | FTP Login bruteforce tool | :heavy_check_mark:
-[18] | SSH Login bruteforce tool | :x:
+[18] | SSH Login bruteforce tool | :heavy_check_mark:
 [19] | FTP User footprint | :x:
 [20] | MYSQL User footprint | :x:
 [21] | Simple Google Bot for web scan | :x:
