@@ -1,5 +1,3 @@
-# Paramiko is a pure-Python implementation of the SSHv2 protocol, providing both client and server functionality.
-#!/usr/bin/env python3
 """
 SSH Brute Force Tool
 Usage: python ssh_brute_force.py -u <host> --user <username> --password <wordlist>
@@ -16,7 +14,7 @@ import argparse
 from queue import Queue
 
 ascii_banner = pyfiglet.figlet_format("SSH Brute Force")
-print(ascii_banner)
+print(termcolor.colored(ascii_banner, 'red'))
 
 def parse_args():
     """Parse command line arguments"""

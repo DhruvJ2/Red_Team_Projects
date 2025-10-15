@@ -20,13 +20,13 @@ Level 2 | Essential | Example
 ------------------------------------------------|------------------------------------------------|-----------------------------------------
 [11] | Simple port scanner | ✔️
 [12] | Port scanner with OS fingerprint using TTL (Time To Live) | ✔️
-[13] | Port scanner with port footprint (HTTP? DNS? FTP? IRC?) | :heavy_check_mark:
-[14] | Simple Web Directory brute-forcer (Threaded) | :heavy_check_mark:
-[15] | Recursive Web Directory brute-forcer (Threaded peer recursion) | :heavy_check_mark:
-[16] | Web Login bruteforce tool | :heavy_check_mark:
-[17] | FTP Login bruteforce tool | :heavy_check_mark:
+[13] | Port scanner with port footprint (HTTP? DNS? FTP? IRC?) | ✔️
+[14] | Simple Web Directory brute-forcer (Threaded) | ✔️
+[15] | Recursive Web Directory brute-forcer (Threaded peer recursion) | ✔️
+[16] | Web Login bruteforce tool | ✔️
+[17] | FTP Login bruteforce tool | ✔️
 [18] | SSH Login bruteforce tool | :heavy_check_mark:
-[19] | FTP User footprint | :x:
+[19] | FTP User footprint | ✔️
 [20] | MYSQL User footprint | :x:
 [21] | Simple Google Bot for web scan | :x:
 [22] | Auto website comment bot | :x:
