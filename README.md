@@ -28,7 +28,7 @@ Level 2 | Essential | Example
 [18] | SSH Login bruteforce tool | :heavy_check_mark:
 [19] | FTP User footprint | ✔️
 [20] | MYSQL User footprint | ✔️
-[21] | Simple Google Bot for web scan | :x:
+[21] | Simple Google Bot for web scan | ✔️
 [22] | Auto website comment bot | :x:
 [23] | Auto website message bot | :x:
 [24] | Web-scrapping using Regex | :x:
@@ -40,7 +40,7 @@ Level 2 | Essential | Example
 [30] | Spam creator | :x:
 
 -------------------------------------------------------------------------------------------------------------------------------------------
-Level 3 | Advanced Network Attacks | Exemple
+Level 3 | Advanced Network Attacks | Example
 ------------------------------------------------|-------------------------------------------|----------------------------------------------
 [31] | Payload for reverse shell | :x:
 [32] | Payload to capture screenshots | :x:
