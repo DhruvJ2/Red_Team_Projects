@@ -58,7 +58,7 @@ Level 3 | Advanced Network Attacks | Example
 [44] | Packet Capture tool | :x:
 
 -------------------------------------------------------------------------------------------------------------------------------------------
-Level 4 | Data analysis, payloads and more networking | Exemple
+Level 4 | Data analysis, payloads and more networking | Example
 ------------------------------------------------|------------------------------------------|-----------------------------------------------
 [45] | Packet Data analysis | :x:
 [46] | Packet image analysis with OpenCV | :x:
@@ -88,7 +88,7 @@ Level 4 | Data analysis, payloads and more networking | Exemple
 [70] | Windows token privilege escalation tool | :x:
 
 -------------------------------------------------------------------------------------------------------------------------------------------
- Level 5 | Cryptography, Reverse Engineering and Post exploitation | Exemple
+ Level 5 | Cryptography, Reverse Engineering and Post exploitation | Example
 ------------------------------------------------|------------------------------------------|-----------------------------------------------
 [71] | Develop a code injection tool | :x:
 [72] | Develop a Worm with auto replication over email | :x:

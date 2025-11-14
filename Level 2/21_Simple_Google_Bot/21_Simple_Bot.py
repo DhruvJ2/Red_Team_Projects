@@ -24,7 +24,7 @@ class SitemapSpider(CrawlSpider):
     rules = (
         Rule(
             LinkExtractor(
-                allow_domains=None,
+                allow_domains=None, # type: ignore
                 deny_extensions=[
                     'pdf', 'zip', 'tar', 'gz', 'rar', '7z',
                     'exe', 'bin', 'dmg', 'iso',
@@ -135,7 +135,7 @@ def run_sitemap_generator(start_url, max_pages=100, depth_limit=3, delay=0.5):
     print('\nStarting crawl...\n')
     
     # Update spider settings
-    SitemapSpider.custom_settings.update({
+    SitemapSpider.custom_settings.update({ # type: ignore
         'CLOSESPIDER_PAGECOUNT': max_pages,
         'DEPTH_LIMIT': depth_limit,
         'DOWNLOAD_DELAY': delay,
