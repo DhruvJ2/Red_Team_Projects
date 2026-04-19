@@ -1,98 +1,56 @@
 from selenium import webdriver
+from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 import time
 
-driver = webdriver.Firefox()
+# --- Setup ---
+options = Options()
+# These flags help the browser run smoothly in automation environments
+options.add_argument("--no-sandbox")
+options.add_argument("--disable-dev-shm-usage")
+options.add_argument("--start-maximized")
+
+driver = webdriver.Chrome(options=options)
 
 try:
-    driver.get("http://testphp.vulnweb.com/guestbook.php")
-    print("Page loaded")
-    
-    time.sleep(2)
-    
-    print(f"Title: {driver.title}")
-    print(f"URL: {driver.current_url}")
-    
-    forms = driver.find_elements(By.TAG_NAME, "form")
-    print(f"\nFound {len(forms)} form")
-    
-    all_inputs = driver.find_elements(By.TAG_NAME, "input")
-    print(f"\nFound {len(all_inputs)} input field:")
-    for i, inp in enumerate(all_inputs):
-        try:
-            name = inp.get_attribute('name')
-            input_type = inp.get_attribute('type')
-            visible = inp.is_displayed()
-            print(f"  Input {i+1}: name='{name}', type='{input_type}', visible={visible}")
-        except:
-            pass
-    
-    all_textareas = driver.find_elements(By.TAG_NAME, "textarea")
-    print(f"\nFound {len(all_textareas)} textarea:")
-    for i, ta in enumerate(all_textareas):
-        try:
-            name = ta.get_attribute('name')
-            visible = ta.is_displayed()
-            print(f"  Textarea {i+1}: name='{name}', visible={visible}")
-        except:
-            pass
-    
-    all_buttons = driver.find_elements(By.TAG_NAME, "button")
-    all_submit_inputs = driver.find_elements(By.CSS_SELECTOR, "input[type='submit']")
-    print(f"\nFound {len(all_buttons)} button(s) and {len(all_submit_inputs)} submit input(s)")
-    
+    # 1. Open the practice site (reliable alternative to vulnweb)
+    print("Navigating to the vulnerable-style practice form...")
+    driver.get("https://testautomationpractice.blogspot.com/")
+
+    # 2. Setup Explicit Wait
     wait = WebDriverWait(driver, 10)
+
+    # 3. Fill out the "Name" (Text Input)
+    # This site uses IDs, which are much more stable for automation
+    print("Entering Name...")
+    name_field = wait.until(EC.presence_of_element_located((By.ID, "name")))
+    name_field.send_keys("Ethical Hacker Test")
+
+    # 4. Fill out the "Address" or "Comment" (Textarea)
+    print("Writing the comment into the textarea...")
+    # This field is a <textarea>, perfect for practicing comments/payloads
+    comment_area = driver.find_element(By.ID, "textarea")
     
-    # Look for textarea by any means
-    try:
-        comment_field = driver.find_element(By.TAG_NAME, "textarea")
-        print("\n Found textarea")
-        comment_field.send_keys("This is a test comment for learning Selenium")
-        print(" Text entered in textarea")
-    except Exception as e:
-        print(f"\n Could not find or fill textarea: {e}")
+    # We can even send 'vulnerable-looking' payloads like HTML tags
+    comment_area.send_keys("User Comment: This is a test post.\n<b>Testing HTML Bold Tag Support</b>")
+
+    # 5. Click the Submit/Execute button
+    # On this specific practice page, we can interact with various 'Submit' style elements
+    print("Finding the submit button...")
+    submit_btn = driver.find_element(By.CSS_SELECTOR, "button.start") # Example selector
     
-    # Look for any visible text input
-    try:
-        text_inputs = driver.find_elements(By.CSS_SELECTOR, "input[type='text']")
-        for inp in text_inputs:
-            if inp.is_displayed():
-                inp.send_keys("Test User")
-                print(" Text entered in visible input field")
-                break
-    except Exception as e:
-        print(f"Could not fill text input: {e}")
+    # Optional: Scroll to the element so you can see it
+    driver.execute_script("arguments[0].scrollIntoView();", comment_area)
     
-    # Find and click submit button
-    try:
-        submit_btn = driver.find_element(By.CSS_SELECTOR, "input[type='submit'], button[type='submit']")
-        print("Found submit button")
-        
-        time.sleep(1) 
-        submit_btn.click()
-        print("Submit button clicked")
-        
-        time.sleep(3)
-        print(f"Final URL: {driver.current_url}")
-        
-    except Exception as e:
-        print(f" Could not find or click submit button: {e}")
-    
-    time.sleep(3)
-    
+    time.sleep(2) # Pause so you can see the filled form
+    print("Process complete!")
+
 except Exception as e:
-    print(f"\n An error occurred: {e}")
-    print(f"Current URL: {driver.current_url}")
-    
-    # Take a screenshot for debugging
-    try:
-        driver.save_screenshot("error_screenshot.png")
-        print("Screenshot saved as error_screenshot.png")
-    except:
-        pass
-    
+    print(f"An error occurred: {e}")
+    # If the script fails, it takes a screenshot of the 'vulnerable' app state
+    driver.save_screenshot("vulnerable_app_error.png")
 finally:
     driver.quit()
-    print("\n Browser closed")
+    print("Browser closed.")

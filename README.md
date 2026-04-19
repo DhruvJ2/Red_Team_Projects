@@ -31,9 +31,9 @@ Level 2 | Essential | Example
 [21] | Simple Google Bot for web scan | ✔️
 [22] | Auto website comment bot | ✔️
 [23] | Auto website message bot | :x:
-[24] | Web-scrapping using Regex | :x:
-[25] | Bot to collect information about someone using Google / Bing / Yahoo! | :x:
-[26] | Simple SQLi tester | :x:
+[24] | Web-scrapping using Regex | ✔️
+[25] | Bot to collect information about someone using Google / Bing / Yahoo! | ✔️
+[26] | Simple SQLi tester | ✔️
 [27] | Simple XSS tester | :x:
 [28] | Simple Wordpress brute-forcer | :x:
 [29] | SQLi database retriever | :x:
